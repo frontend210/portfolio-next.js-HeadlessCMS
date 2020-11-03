@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const SocialLinks: FC = () => {
   const { colorMode } = useColorMode();
-  const sectionBgColor = { light: "gray.100", dark: "gray.900" };
+  const sectionBgColor = { light: "gray.100", dark: "rgba(0,0,0,0.7)" };
   const sectionColor = { light: "gray.900", dark: "gray.100" };
 
   return (

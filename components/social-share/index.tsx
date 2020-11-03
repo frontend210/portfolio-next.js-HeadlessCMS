@@ -9,7 +9,7 @@ interface IProps {
 
 const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
   const { colorMode } = useColorMode();
-  const sectionBgColor = { light: "gray.100", dark: "gray.900" };
+  const sectionBgColor = { light: "gray.100", dark: "rgba(0,0,0,0.7)" };
   const sectionColor = { light: "gray.900ack", dark: "gray.100" };
 
   const socialLinks = [

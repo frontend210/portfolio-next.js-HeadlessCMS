@@ -3,7 +3,7 @@ import { Box, Stack, Heading, Text, useColorMode } from "@chakra-ui/core";
 
 const Jumbotron: FC = () => {
   const { colorMode } = useColorMode();
-  const sectionBgColor = { light: "white", dark: "gray.900" };
+  const sectionBgColor = { light: "white", dark: "rgba(0,0,0,0.7)" };
   const sectionColor = { light: "gray.900", dark: "white" };
 
   return (

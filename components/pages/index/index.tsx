@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Grid, Stack } from "@chakra-ui/core";
+import {Box, Flex, Grid, Stack} from "@chakra-ui/core";
 import IArticle from "types/article";
 import IPublication from "types/publication";
 import IProject from "types/project";
@@ -50,46 +50,16 @@ const Page: FC<Props> = ({
 
   return (
     <>
-      {/*<Box as="section">*/}
-      {/*  <Jumbotron />*/}
-      {/*</Box>*/}
-      {/*<SocialLinks />*/}
       <Navbar />
       <Box>
-        <Box maxW="6xl" mx="auto" px={4} py={8}>
-          <Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]} gap={8}>
-            <Stack spacing={32} order={[2, 2, 2, 1]}>
-              <Box as="section">
-                <LazyLoad once offset={100}>
-                  <About />
-                </LazyLoad>
-              </Box>
-              {/*<Box as="section">*/}
-              {/*  <LazyLoad once offset={100}>*/}
-              {/*    <Articles articles={sortedArticles.slice(0, 3)} />*/}
-              {/*  </LazyLoad>*/}
-              {/*</Box>*/}
-              {/*<Box as="section">*/}
-              {/*  <LazyLoad once offset={100}>*/}
-              {/*    <Publications publications={publications.slice(0, 3)} />*/}
-              {/*  </LazyLoad>*/}
-              {/*</Box>*/}
-              {/*<Box as="section">*/}
-              {/*  <LazyLoad once offset={100}>*/}
-              {/*    <Projects projects={projects.slice(0, 3)} />*/}
-              {/*  </LazyLoad>*/}
-              {/*</Box>*/}
-            </Stack>
-            <Box order={[1, 1, 1, 2]}>
-              <Stack spacing={8} position="sticky" top={96}>
-                <Box>
-                  <LazyLoad once offset={100}>
-                    <NewsletterSubscriptionForm />
-                  </LazyLoad>
-                </Box>
-              </Stack>
+        <Box maxW="10xl" mx="auto" px={4} py={8}>
+          <Flex align="center" justifyContent="center" alignContent="center">
+            <Box as="section">
+              <LazyLoad once offset={100}>
+                <About />
+              </LazyLoad>
             </Box>
-          </Grid>
+          </Flex>
         </Box>
       </Box>
       <Footer />

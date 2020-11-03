@@ -48,7 +48,7 @@ const LINKS = [
 
 const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const navbarSectionBgColor = { light: "white", dark: "gray.900" };
+  const navbarSectionBgColor = { light: "white", dark: "rgba(0,0,0,0.7)" };
   const navbarSectionColor = { light: "dark.900", dark: "white" };
   const linkedinSectionColor = { light: "#0e76a8", dark: "white" };
 
@@ -123,31 +123,29 @@ const Navbar: FC = () => {
             Resume
           </_Link>
         </Box>
-        <_Link
-          px={1}
-          href="https://github.com/frontend210"
-          rounded="md"
-          fontSize={28}
-          fontWeight="bold"
-          isExternal
-        >
-          <Stack spacing={2} isInline alignItems="center">
-            <Box as={IoLogoGithub}/>
-          </Stack>
-        </_Link>
-        <_Link
-          px={1}
-          paddingRight={6}
-          href="https://www.linkedin.com/in/ke-li-466256190"
-          rounded="md"
-          fontSize={32}
-          fontWeight="bold"
-          isExternal
-        >
-          <Stack spacing={2} isInline alignItems="center">
-            <Box as={IoLogoLinkedin} color={linkedinSectionColor[colorMode]}/>
-          </Stack>
-        </_Link>
+        <Box>
+          <_Link
+              py={4}
+              px={2}
+              href="https://github.com/frontend210"
+              rounded="md"
+              fontWeight="bold"
+              isExternal
+          >
+            <Box as={IoLogoGithub} fontSize={24}/>
+          </_Link>
+        </Box>
+        <Box>
+          <_Link
+              py={4}
+              px={2}
+              href="https://www.linkedin.com/in/ke-li-466256190"
+              rounded="md"
+              isExternal
+          >
+            <Box as={IoLogoLinkedin} fontSize={24}/>
+          </_Link>
+        </Box>
         <Box px={2}>{themeSwitcherButtonNode()}</Box>
       </Stack>
     );
@@ -156,6 +154,8 @@ const Navbar: FC = () => {
   return (
     <Box
       as="header"
+      id="header"
+      className="nav-menu"
       position="sticky"
       top={0}
       zIndex={1}

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ThemeProvider, CSSReset, LightMode, theme } from "@chakra-ui/core";
+import { ThemeProvider, CSSReset, DarkMode, theme } from "@chakra-ui/core";
 import Container from "components/layouts/container";
 
 const Layout: FC = ({ children }) => {
@@ -18,10 +18,10 @@ const Layout: FC = ({ children }) => {
 
   return (
     <ThemeProvider theme={customTheme}>
-      <LightMode>
+      <DarkMode>
         <CSSReset />
         <Container>{children}</Container>
-      </LightMode>
+      </DarkMode>
     </ThemeProvider>
   );
 };

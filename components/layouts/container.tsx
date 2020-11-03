@@ -5,7 +5,7 @@ import { prismDarkTheme, prismLightTheme } from "styles/code";
 
 const Container: FC = ({ children }) => {
   const { colorMode } = useColorMode();
-  const sectionBgColor = { light: "gray.100", dark: "black" };
+  const sectionBgColor = { light: "gray.100", dark: "#0000" };
   const sectionColor = { light: "black", dark: "gray.100" };
 
   const codeStyles = {

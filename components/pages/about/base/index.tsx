@@ -7,14 +7,14 @@ import {
   Image,
   Text,
   Link,
-  useColorMode,
+  useColorMode, Flex, Progress,
 } from "@chakra-ui/core";
 import withNavbarLayout from "lib/with-navbar-layout";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 const Page: FC = () => {
   const { colorMode } = useColorMode();
-  const cardBgColor = { light: "white", dark: "gray.900" };
+  const cardBgColor = { light: "white", dark: "rgba(0,0,0,0.7)" };
   const cardColor = { light: "gray.900", dark: "white" };
 
   const headingNode = () => {
@@ -38,7 +38,7 @@ const Page: FC = () => {
             <Heading as="h1" size="xl">
               Li Ke
             </Heading>
-            <Text>About me</Text>
+            <Text fontWeight="bold">FullStack Engineer, Javascript Enthusiast</Text>
           </Stack>
         </Box>
       </Stack>
@@ -47,55 +47,261 @@ const Page: FC = () => {
 
   const bioDescriptionNode = () => {
     return (
-      <Box className="article">
-        My name is Ke Li and I am a
-        passionate full-stack developer
-        with extensive knowledge and
-        experience.
-        Since 2010 I have been
-        focusing on advanced web and
-        cross-platform mobile
-        development.
-        During the freelance work so
-        far, I've acquired modern
-        cutting-edge technologies, the
-        best practices, and a solid
-        background in network/security
-        and became a strong problem
-        solver, fast learner.
-        I always look for a great team
-        for the next challenges, always
-        aspiring to work with great,
-        potential partners!
+      <Box id="about" className="about">
+        {/* About Me */}
+        <div className="about-me">
 
+          <div className="section-title">
+            <h2>About</h2>
+            {/*<p>Learn more about me</p>*/}
+          </div>
 
+          <Flex flexDirection={["column", "column", "row", "row"]}>
+            <Flex size={["100%", "100%", "65%", "65%"]} className="content" pt={[4, 4, 0, 0]} data-aos="fade-left" display="block">
+              <h3>Senior FullStack Web Developer, Javascript Enthusiast</h3>
+              <Text as="i" color="#FFF" size="25px">
+                Specialized in ES6+, Typescript, Python and PHP
+              </Text>
 
+              <br/>
+              <br/>
+              <Grid templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)"]} gap={6}>
+                <Box><i className="icofont-rounded-right"/> <strong>Email:</strong> sr.frontenddev210@gmail.com</Box>
+                <Box><i className="icofont-rounded-right"/> <strong>Phone:</strong> +86 187 4150 9250</Box>
+                <Box><i className="icofont-rounded-right"/> <strong>City:</strong> TianJin, China</Box>
+                <Box><i className="icofont-rounded-right"/> <strong>Age:</strong> 30</Box>
+                <Box><i className="icofont-rounded-right"/> <strong>Degree:</strong> Bachelor</Box>
+                <Box><i className="icofont-rounded-right"/> <strong>Freelance:</strong> Available</Box>
+              </Grid>
 
-        <Text fontWeight="bold">
-          Backend/Frontend Engineer, Javascript Enthusiast passionated interested in
-          Software Architecture, Design Pattern, DevOps, Artificial Intelligence.
-        </Text>
-        <Text>
-          I'm also a big fan of{" "}
-          <Box as="span" fontWeight="bold">
-            React.js
-          </Box>{" "}
-          and have{" "}
-          <Box as="span" fontWeight="bold">
-            around 5 years
-          </Box>{" "}
-          experience with it. I have also fiddled with Ruby on Rails and Elixir.
-          I'm eager to learn new frameworks, libraries and languages like Elm,
-          Vue.js and ReasonML. I'm also interested in learning Go and Python.
-        </Text>
-        <Text>
-          Though I spend most of my time writing code for building User
-          Interfaces, I've also fiddled with many Back-end technologies. I like
-          enjoying working in the intersection of design and development. I feel
-          most productive when I'm able to design User Interfaces which not only
-          look good but has a good performance as well.
-        </Text>
-      </Box>
+              <br/>
+              <Text>
+                I have over 10 years of experience working on a wide range of technologies and projects from LAMP stack
+                to modern Angular, React and Vue application, static website with Node.js, PHP and Python backend.
+              </Text>
+              <br/>
+              <Text>
+                Throughout my career, I have acquired advanced technical knowledge, practical experience and the best practices
+                in Software Architecture, Design Principles, Cybersecurity, DevOps, etc.
+              </Text>
+              <br/>
+              <Text>
+                I'm eager to learn new languages, frameworks and technologies. Recently I have an interest in
+                Blockchain, AI technology, Functional programming, Golang, Microservice Architecture, Kubernetes.
+              </Text>
+
+              <br/>
+              <br/>
+              {socialLinksNode()}
+            </Flex>
+          </Flex>
+
+        </div>{/*End About Me*/}
+
+        {/* Counts */}
+        <Grid className="counts" templateColumns={["repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)", "repeat(4, 1fr)"]} gap={6}>
+          <Box className="count-box">
+            <i className="icofont-simple-smile"/>
+            <span data-toggle="counter-up">232</span>
+            <p>Happy Clients</p>
+          </Box>
+          <Box className="count-box" mt={[0,0,5,5]}>
+            <i className="icofont-document-folder"/>
+            <span data-toggle="counter-up">521</span>
+            <p>Projects</p>
+          </Box>
+          <Box className="count-box" mt={[0,0,5,5]}>
+            <i className="icofont-live-support"/>
+            <span data-toggle="counter-up">1,463</span>
+            <p>Hours Of Support</p>
+          </Box>
+          <Box className="count-box" mt={[0,0,5,5]}>
+            <i className="icofont-users-alt-5"/>
+            <span data-toggle="counter-up">15</span>
+            <p>Hard Workers</p>
+          </Box>
+        </Grid>
+        {/* End Counts */}
+
+        {/* Skills */}
+        <Box className="skills">
+          <Box className="section-title">
+            <h2>Skills</h2>
+          </Box>
+
+          <Grid className="skills-content" templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)"]} gap={6}>
+
+            <Box className="progress">
+              <span className="skill">Javascript <i className="val">90%</i></span>
+              <Progress size="sm" value={90} />
+              {/*<Box className="progress-bar-wrap">*/}
+              {/*  <Box className="progress-bar" role="progressbar" aria-valuenow={90} aria-valuemin={0} aria-valuemax={100}/>*/}
+              {/*</Box>*/}
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">Node.js <i className="val">90%</i></span>
+              <Progress size="sm" value={90} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">Typescript <i className="val">80%</i></span>
+              <Progress size="sm" value={80} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">PHP <i className="val">90%</i></span>
+              <Progress size="sm" value={90} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">Python <i className="val">80%</i></span>
+              <Progress size="sm" value={80} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">REST API development <i className="val">90%</i></span>
+              <Progress size="sm" value={90} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">GraphQL <i className="val">80%</i></span>
+              <Progress size="sm" value={80} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">Database <i className="val">80%</i></span>
+              <Progress size="sm" value={80} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">Git <i className="val">90%</i></span>
+              <Progress size="sm" value={90} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">Angular 8+ <i className="val">90%</i></span>
+              <Progress size="sm" value={90} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">React.js <i className="val">80%</i></span>
+              <Progress size="sm" value={80} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">Vue.js <i className="val">70%</i></span>
+              <Progress size="sm" value={70} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">DevOps, CI/CD<i className="val">60%</i></span>
+              <Progress size="sm" value={60} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">Networking, Cybersecurity Standards<i className="val">80%</i></span>
+              <Progress size="sm" value={80} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">Server administration<i className="val">70%</i></span>
+              <Progress size="sm" value={70} />
+            </Box>
+
+            <Box className="progress">
+              <span className="skill">AWS, Firebase, Google Cloud<i className="val">70%</i></span>
+              <Progress size="sm" value={70} />
+            </Box>
+          </Grid>
+        </Box>{/* End Skills */}
+
+        {/* Interests */}
+        <Box className="interests">
+          <div className="section-title">
+            <h2>Interests</h2>
+          </div>
+
+          <Grid className="skills-content" templateColumns={["repeat(2, 1fr)", "repeat(3, 1fr)", "repeat(4, 1fr)", "repeat(4, 1fr)"]} gap={6}>
+            <Box className="icon-box" mt={[0,0,4,4]}>
+              <i className="ri-store-line" style={{color: "#ffbb2c"}}/>
+              <h3>Blockchain</h3>
+            </Box>
+            <Box className="icon-box" mt={[0,0,4,4]}>
+              <i className="ri-bar-chart-box-line" style={{color: "#5578ff"}}/>
+              <h3>Artificial Intelligence</h3>
+            </Box>
+            <Box className="icon-box" mt={[0,0,4,4]}>
+              <i className="ri-calendar-todo-line" style={{color: "#e80368"}}/>
+              <h3>Software Architecture(monorepo, microservice)</h3>
+            </Box>
+            <Box className="icon-box" mt={[0,0,4,4]}>
+              <i className="ri-paint-brush-line" style={{color: "#e361ff"}}/>
+              <h3>Functional Programming</h3>
+            </Box>
+            <Box className="icon-box" mt={[0,0,4,4]}>
+              <i className="ri-database-2-line" style={{color: "#47aeff"}}/>
+              <h3>DevOps(Kubernetes)</h3>
+            </Box>
+          </Grid>
+        </Box>{/* End Interests */}
+
+        {/* Testimonials  */}
+        {/*<Box className="testimonials">*/}
+        {/*    <Box className="section-title">*/}
+        {/*      <h2>Testimonials</h2>*/}
+        {/*    </Box>*/}
+
+        {/*    <Box className="owl-carousel testimonials-carousel">*/}
+
+        {/*      <Box className="testimonial-item">*/}
+        {/*        <p>*/}
+        {/*          <i className="bx bxs-quote-alt-left quote-icon-left"/>*/}
+        {/*          Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.*/}
+        {/*          <i className="bx bxs-quote-alt-right quote-icon-right"/>*/}
+        {/*        </p>*/}
+        {/*        <img src="img/testimonials/testimonials-1.jpg" className="testimonial-img" alt=""/>*/}
+        {/*          <h3>Saul Goodman</h3>*/}
+        {/*          <h4>Ceo &amp; Founder</h4>*/}
+        {/*      </Box>*/}
+
+        {/*      <Box className="testimonial-item">*/}
+        {/*        <p>*/}
+        {/*          <i className="bx bxs-quote-alt-left quote-icon-left"/>*/}
+        {/*          Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.*/}
+        {/*          <i className="bx bxs-quote-alt-right quote-icon-right"/>*/}
+        {/*        </p>*/}
+        {/*        <img src="img/testimonials/testimonials-2.jpg" className="testimonial-img" alt=""/>*/}
+        {/*          <h3>Sara Wilsson</h3>*/}
+        {/*          <h4>Designer</h4>*/}
+        {/*      </Box>*/}
+
+        {/*      <Box className="testimonial-item">*/}
+        {/*        <p>*/}
+        {/*          <i className="bx bxs-quote-alt-left quote-icon-left"></i>*/}
+        {/*          Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.*/}
+        {/*          <i className="bx bxs-quote-alt-right quote-icon-right"></i>*/}
+        {/*        </p>*/}
+        {/*        <img src="img/testimonials/testimonials-3.jpg" className="testimonial-img" alt=""/>*/}
+        {/*          <h3>Jena Karlis</h3>*/}
+        {/*          <h4>Store Owner</h4>*/}
+        {/*      </Box>*/}
+
+        {/*      <Box className="testimonial-item">*/}
+        {/*        <p>*/}
+        {/*          <i className="bx bxs-quote-alt-left quote-icon-left"/>*/}
+        {/*          Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.*/}
+        {/*          <i className="bx bxs-quote-alt-right quote-icon-right"/>*/}
+        {/*        </p>*/}
+        {/*        <img src="img/testimonials/testimonials-4.jpg" className="testimonial-img" alt=""/>*/}
+        {/*          <h3>Matt Brandon</h3>*/}
+        {/*          <h4>Freelancer</h4>*/}
+        {/*      </Box>*/}
+        {/*    </Box>*/}
+
+        {/*  </Box>*/}
+        {/* End Testimonials */}
+        </Box>
     );
   };
 
@@ -145,13 +351,13 @@ const Page: FC = () => {
   };
 
   return (
-    <Box maxW="3xl" mx="auto" px={4} py={8}>
+    <Box maxW="6xl" mx="auto" px={4} py={8}>
       <Grid templateColumns="1fr">
-        <Box as="section">
+        <Box as="section" backgroundColor="rgba(0, 0, 0, 0.7)" p={["3", "3", "6", "6"]}>
           <Stack spacing={8}>
-            {headingNode()}
+            {/*{headingNode()}*/}
             {bioDescriptionNode()}
-            {socialLinksNode()}
+            {/*{socialLinksNode()}*/}
           </Stack>
         </Box>
       </Grid>

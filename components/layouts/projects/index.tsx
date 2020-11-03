@@ -18,7 +18,7 @@ interface Props {
 
 const Projects: FC<Props> = ({ projects = [] }) => {
   const { colorMode } = useColorMode();
-  const cardBgColor = { light: "white", dark: "gray.900" };
+  const cardBgColor = { light: "white", dark: "rgba(0,0,0,0.7)" };
   const cardColor = { light: "gray.900", dark: "white" };
   const [searchQuery, setSearchQuery] = useState("");
   const sortedProjects = projects.filter((project: IProject) =>
